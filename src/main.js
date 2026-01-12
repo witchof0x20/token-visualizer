@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   button.addEventListener('click', performTokenization);
 
+  // Auto-tokenize on input change
+  input.addEventListener('input', performTokenization);
+
   // Auto-tokenize on tokenizer change
   tokenizerSelect.addEventListener('change', () => {
     if (input.value) {
