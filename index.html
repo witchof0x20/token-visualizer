@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Visualizer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Token Visualizer</h1>
+        <p>Visualize tokenization with different BPE encoders</p>
+      </header>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="tokenizer">Tokenizer:</label>
+          <select id="tokenizer">
+            <option value="o200k_harmony">o200k_harmony (GPT-OSS models)</option>
+            <option value="o200k_base" selected>o200k_base (GPT-5, GPT-4.1, GPT-4o, o4, o3, o1)</option>
+            <option value="cl100k_base">cl100k_base (ChatGPT, text-embedding-ada-002)</option>
+            <option value="p50k_base">p50k_base (Code models, text-davinci-002/003)</option>
+            <option value="p50k_edit">p50k_edit (Edit models)</option>
+            <option value="r50k_base">r50k_base / gpt2 (GPT-3 models)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-section">
+        <label for="input">Input Text:</label>
+        <textarea
+          id="input"
+          placeholder="Enter text to tokenize..."
+          rows="8"
+        >Hello, world! This is a test of the tiktoken tokenizer.</textarea>
+      </div>
+
+      <button id="tokenize" class="tokenize-btn">Tokenize</button>
+
+      <div class="stats" id="stats"></div>
+
+      <div class="output-section">
+        <h2>Tokenized Output:</h2>
+        <div id="output" class="token-display"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
